@@ -59,7 +59,7 @@
 					statusChangeCallback(response);
 				});
 			}
-			$(document).ready(function() { checkLoginState(); });
+			window.document.onload = function() { checkLoginState(); };
 		</script>
 	</body>
 </html>
