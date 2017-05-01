@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta name="description" content="The core aim of our project is to create online learning management system that combines best practices in organizing training so that it will be interesting, useful and much easier for the students. The most important part of our project is to fertilize future programmers, showing them that it is not as difficult as it sounds. This will happen through brief and extensive online practical competitions taken their levels, with certificates and prizes for the best ones.">
+		<meta name="description" content="Вижте какво ще работите! Тук и сега!">
 		<meta name="author" content="TechEdu ++">
 		<meta name="keywords" content="Learning, Online, System, Presentations, Videos, Exam">
 		<meta name="distribution" content="web">
