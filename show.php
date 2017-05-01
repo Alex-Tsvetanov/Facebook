@@ -71,7 +71,7 @@
 
 					$conn = new MySQL ($dbname);
 					
-					$conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
+					$result = $conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
 					
 					$row = $result->fetch_assoc();
 					
