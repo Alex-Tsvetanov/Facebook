@@ -4,11 +4,11 @@ function showQuiz() {
 						<div class="col-md-12">
 							<div class="form-group">
 								<div class="container-fluid">
-									<img src="img/in_money.jpg" style="float: left;">
 									<div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">1</span> Колко искаш да ти е заплатата?</h3>
+												<img src="img/in_money.jpg">
 											</div>
 											<div class="modal-body">
 												<div class="quiz" id="quiz" data-toggle="buttons">
