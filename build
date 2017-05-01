@@ -1,0 +1,1 @@
+cat init.sql | mysql -u root -p
