@@ -93,7 +93,7 @@
 							'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body">Ще си средностатистически работник!<br><br>Можеш да промениш това! Влез в <a href="https://techedu.cf">TechEdu++</a> и стани супер як програмист!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу.<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffb.techedu.cf%2Fshow.php%3Femail=' . $row["Email"] . '&layout=button&size=large&mobile_iframe=true&appId=1818518568468396&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> </div><div class="modal-footer"></div></div></div></div>'
 						);
 					}
-					echo "<script>$('#myModal').modal('show');</script>";
+					echo "<script>window.document.onload = window.onload = function () { $('#myModal').modal('show'); }; </script>";
 				?>
 			</div>
 		</div>
