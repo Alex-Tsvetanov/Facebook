@@ -33,7 +33,25 @@
 
 	$conn = new MySQL ($dbname);
 	
-	$conn->query ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`) VALUES ('{$_REQUEST["email"]}','{$_REQUEST["name"]}','{$_REQUEST["gender"]}','{$_REQUEST["locale"]}')");
-	echo "INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`) VALUES ('{$_REQUEST["email"]}','{$_REQUEST["name"]}','{$_REQUEST["gender"]}','{$_REQUEST["locale"]}')";
-	
+	$person = json_decode($_REQUEST["person"]);
+	$answers = json_decode($_REQUEST["answers"]);
+	if ($answers["1"] + $answers["2"] + $answers["3"] === "222") {
+		$result = "Програмист";
+		
+		echo str_replace (
+			"{{name}}",
+			$person["name"],
+			'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body"> Ще си Програмист!<br><br>Използвай <a href="https://techedu.cf">TechEdu++</a>, за да се развиваш още по-бързо!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу. </div><div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div></div></div></div>'
+		);
+	}
+	else {
+		$result = "Обикновен работник";
+		
+		echo str_replace (
+			"{{name}}",
+			$person["name"],
+			'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body">Ще си средностатистически работник!<br><br>Можеш да промениш това! Влез в <a href="https://techedu.cf">TechEdu++</a> и стани супер як програмист!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу. </div><div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div></div></div></div>'
+		);
+	}
+	$conn->query ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person["email"]}','{$person["name"]}','{$person["gender"]}','{$person["locale"]}', '{$result}')");
 ?>

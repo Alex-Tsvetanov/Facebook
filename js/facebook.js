@@ -1,11 +1,11 @@
-function sendInfo() {
+function sendInfo(answersParam) {
 	$.ajax({  
 		type: "POST",  
 		url: "/api.php",  
-		data: window.person,  
+		data: {person: window.person, answers: answersParam},  
 		success: function(dataString) {  
-			// no return data
-			console.log(dataString);
+			$("#content").html(dataString);
+			$('#myModal').modal('show');
 		} 
 	});  
 }

@@ -1,6 +1,8 @@
 function showQuiz() {
 	$("#content").html(`
 				<center>
+
+						<form onsubmit='return onSubmit(this)'>
 						<div class="col-md-12">
 							<div class="form-group">
 								<div class="container-fluid">
@@ -131,6 +133,15 @@ function showQuiz() {
 						<div class="col-md-12">
 							<button class="btn btn-raised btn-success">Виж резултата</button>
 						</div>
+						</form>
 					</center>
 	`);	
+}
+
+function onSubmit(form) {
+  var data = JSON.stringify($(form).serializeArray());
+
+  sendInfo(data);
+
+  return false; //don't submit
 }
