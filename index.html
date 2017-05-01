@@ -50,20 +50,23 @@
 				});
 			}
 
-			FB.Event.subscribe('auth.authResponseChange', function(response) {
-				if (response.status === 'connected') {
-					FB.api('/me', function(response) {
-						console.log(response);
-					});   
-				} else if (response.status === 'not_authorized') {
-					FB.login(function(response) {},{scope: 'email'});
-				} else {
-					FB.login(function(response) {}, {scope: 'email'});
-				}
-			});
+			function init () {
+				FB.Event.subscribe('auth.authResponseChange', function(response) {
+					if (response.status === 'connected') {
+						FB.api('/me', function(response) {
+							console.log(response);
+						});   
+					} else if (response.status === 'not_authorized') {
+						FB.login(function(response) {},{scope: 'email'});
+					} else {
+						FB.login(function(response) {}, {scope: 'email'});
+					}
+				});
+				checkLoginState();
+			}
 			
-			window.document.onload = function() { checkLoginState(); };
-			window.onload = function() { checkLoginState(); };
+			window.document.onload = function() { init(); };
+			window.onload = function() { init(); };
 		</script>
 	</body>
 </html>
