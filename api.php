@@ -39,7 +39,7 @@
 	if ($answers === '[{"name":"1","value":"2"},{"name":"2","value":"2"},{"name":"3","value":"1"}]') {
 		$result = "Програмист";
 		
-		$iframeShareLink = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" . urlencode("http://fb.techedu.cf/show.php?email={$person->email}" . "&p[title]=" + urlencode("Какво ще работиш?") . "&p[summary]=" . urlencode("Аз ще се развивам с TechEdu++, за да стана още по-добър програмист! А ти?");
+		$iframeShareLink = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" . urlencode("http://fb.techedu.cf/show.php?email={$person->email}") . "&p[title]=" + urlencode("Какво ще работиш?") . "&p[summary]=" . urlencode("Аз ще се развивам с TechEdu++, за да стана още по-добър програмист! А ти?");
 		
 		echo str_replace (
 			"{{name}}",
