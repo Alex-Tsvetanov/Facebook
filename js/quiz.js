@@ -4,7 +4,7 @@ function showQuiz() {
 						<div class="col-md-12">
 							<div class="form-group">
 								<div class="container-fluid">
-									<div class="modal-dialog">
+									<div class="modal-dialog" style="background: url('img/in_money.jpg');">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">1</span> Колко искаш да ти е заплатата?</h3>
@@ -30,7 +30,7 @@ function showQuiz() {
 											</div>
 										</div>
 									</div>
-									<div class="modal-dialog">
+									<div class="modal-dialog" style="background: url('img/3_1.jpg');">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">2</span> Колко добре знаеш математеика?</h3>
@@ -96,7 +96,7 @@ function showQuiz() {
 											</div>
 										</div>
 									</div>
-									<div class="modal-dialog">
+									<div class="modal-dialog" style="background: url('img/computer.jpg');">
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">3</span> Имаш ли интерес към компютрите?</h3>
