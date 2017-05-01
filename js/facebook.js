@@ -3,7 +3,7 @@ function checkLoginState() {
 		console.log(response);
 		if (response.status === 'connected') {
 			FB.api('/me?fields=id,name,email,permissions', function(responseAPI) {
-				console.log(response);
+				console.log(responseAPI);
 			});
 		} else {
 			document.getElementById('status').innerHTML = 'Please log into this app.';
