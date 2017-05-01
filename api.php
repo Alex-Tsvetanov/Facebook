@@ -55,5 +55,5 @@
 		);
 	}
 	$conn->query ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person->email}','{$person->name}','{$person->gender}','{$person->locale}', '{$answers}')");
-	echo ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person->email}','{$person->name}','{$person->gender}','{$person->locale}', '{$answers}')");
+	//echo ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person->email}','{$person->name}','{$person->gender}','{$person->locale}', '{$answers}')");
 ?>

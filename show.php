@@ -87,7 +87,7 @@
 					
 					$email = urldecode($_REQUEST["email"]);
 					$result = $conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$email}'");
-					echo ("SELECT * FROM `JobsQuiz` WHERE `Email`='{$email}'");
+//					echo ("SELECT * FROM `JobsQuiz` WHERE `Email`='{$email}'");
 					
 					if ($result->num_rows == 1) 
 					{
