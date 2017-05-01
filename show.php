@@ -87,27 +87,36 @@
 					
 					$result = $conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
 					
-					$row = $result->fetch_assoc();
-					
-					if ($row["Result"] === '[{"name":"1","value":"2"},{"name":"2","value":"2"},{"name":"3","value":"1"}]') {
-						$result = "Програмист";
+					if ($result->num_rows == 1)) 
+					{
+						$row = $result->fetch_assoc();
 						
-						echo str_replace (
-							"{{name}}",
-							$row["Name"],
-							'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body"> Ще си Програмист!<br><br>Използвай <a href="https://techedu.cf">TechEdu++</a>, за да се развиваш още по-бързо!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу.<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffb.techedu.cf%2Fshow.php%3Femail=' . $row["Email"]	. '&layout=button&size=large&mobile_iframe=true&appId=1818518568468396&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> </div><div class="modal-footer"></div></div></div></div>'
-						);
+						if ($row["Result"] === '[{"name":"1","value":"2"},{"name":"2","value":"2"},{"name":"3","value":"1"}]') 
+						{
+							$result = "Програмист";
+							
+							echo str_replace (
+								"{{name}}",
+								$row["Name"],
+								'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body"> Ще си Програмист!<br><br>Използвай <a href="https://techedu.cf">TechEdu++</a>, за да се развиваш още по-бързо!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу.<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffb.techedu.cf%2Fshow.php%3Femail=' . $row["Email"]	. '&layout=button&size=large&mobile_iframe=true&appId=1818518568468396&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> </div><div class="modal-footer"></div></div></div></div>'
+							);
+						}
+						else 
+						{
+							$result = "Обикновен работник";
+							
+							echo str_replace (
+								"{{name}}",
+								$row["Name"],
+								'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body">Ще си средностатистически работник!<br><br>Можеш да промениш това! Влез в <a href="https://techedu.cf">TechEdu++</a> и стани супер як програмист!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу.<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffb.techedu.cf%2Fshow.php%3Femail=' . $row["Email"] . '&layout=button&size=large&mobile_iframe=true&appId=1818518568468396&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> </div><div class="modal-footer"></div></div></div></div>'
+							);
+						}
+						echo "<script>window.document.onload = window.onload = function () { $('#myModal').modal('show'); }; </script>";
 					}
-					else {
-						$result = "Обикновен работник";
-						
-						echo str_replace (
-							"{{name}}",
-							$row["Name"],
-							'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body">Ще си средностатистически работник!<br><br>Можеш да промениш това! Влез в <a href="https://techedu.cf">TechEdu++</a> и стани супер як програмист!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу.<br><iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Ffb.techedu.cf%2Fshow.php%3Femail=' . $row["Email"] . '&layout=button&size=large&mobile_iframe=true&appId=1818518568468396&width=73&height=28" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe> </div><div class="modal-footer"></div></div></div></div>'
-						);
+					else
+					{
+						echo "<h1 class='text-danger'>There are no user with this mail!</h1>"
 					}
-					echo "<script>window.document.onload = window.onload = function () { $('#myModal').modal('show'); }; </script>";
 				?>
 	</body>
 </html>
