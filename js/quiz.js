@@ -8,7 +8,7 @@ function showQuiz() {
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">1</span> Колко искаш да ти е заплатата?</h3>
-												<img src="img/in_money.jpg">
+												<img class="img-responsive" src="img/in_money.jpg">
 											</div>
 											<div class="modal-body">
 												<div class="quiz" id="quiz" data-toggle="buttons">
@@ -35,6 +35,7 @@ function showQuiz() {
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">2</span> Колко добре знаеш математика?</h3>
+												<img class="img-responsive" src="img/3_1.jpg">
 											</div>
 											<div class="modal-body">
 												<div class="quiz" id="quiz" data-toggle="buttons">
@@ -101,6 +102,7 @@ function showQuiz() {
 										<div class="modal-content">
 											<div class="modal-header">
 												<h3><span class="label label-warning" id="qid">3</span> Имаш ли интерес към компютрите?</h3>
+												<img class="img-responsive" src="img/computer.jpg">
 											</div>
 											<div class="modal-body">
 												<div class="quiz" id="quiz" data-toggle="buttons">
