@@ -5,4 +5,4 @@ SET time_zone = "+00:00";
 
 USE `Facebook`;
 DROP TABLE IF EXISTS `JobsQuiz`;
-CREATE TABLE `JobsQuiz` (`Email` TEXT NOT NULL UNIQUE, `Name` TEXT, `Gender` TEXT, `Locale` TEXT);
+CREATE TABLE `JobsQuiz` (`Email` varchar(255) NOT NULL UNIQUE, `Name` TEXT, `Gender` TEXT, `Locale` TEXT);
