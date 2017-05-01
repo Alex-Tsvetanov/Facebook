@@ -50,7 +50,7 @@
 	else {
 		$result = "Обикновен работник";
 
-		$iframeShareLink = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" . urlencode("http://fb.techedu.cf/show.php?email={$person->email}" . "&p[title]=" + urlencode("Какво ще работиш?") . "&p[summary]=" . urlencode("Аз ще се развивам с TechEdu++, за да стана програмист! А ти?");
+		$iframeShareLink = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" . urlencode("http://fb.techedu.cf/show.php?email={$person->email}") . "&p[title]=" + urlencode("Какво ще работиш?") . "&p[summary]=" . urlencode("Аз ще се развивам с TechEdu++, за да стана програмист! А ти?");
 
 		echo str_replace (
 			"{{name}}",
