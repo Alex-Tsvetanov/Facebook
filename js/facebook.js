@@ -39,5 +39,9 @@ function init () {
 	checkLoginState();
 }
 
+function login() {
+	FB.login(function(response) {}, {scope: 'email'});
+}
+
 window.document.onload = function() { init(); };
 window.onload = function() { init(); };
