@@ -86,6 +86,7 @@
 					$conn = new MySQL ($dbname);
 					
 					$result = $conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
+					echo ("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
 					
 					if ($result->num_rows == 1) 
 					{
