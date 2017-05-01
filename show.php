@@ -36,6 +36,20 @@
 		</div>
 		<div class="container">
 			<div class="row" id="content">
+			</div>
+		</div>
+		
+		<script src="js/quiz.js"></script>
+		<script src="js/facebook.js"> </script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/tether.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/material.min.js"></script>
+		<script src="js/ripples.min.js"></script>
+		<script src="js/snackbar.min.js"></script>
+		<script src="js/jquery.nouislider.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/main.js"></script>
 				<?php
 					class MySQL
 					{
@@ -95,20 +109,6 @@
 					}
 					echo "<script>window.document.onload = window.onload = function () { $('#myModal').modal('show'); }; </script>";
 				?>
-			</div>
-		</div>
-		
-		<script src="js/quiz.js"></script>
-		<script src="js/facebook.js"> </script>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/tether.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/material.min.js"></script>
-		<script src="js/ripples.min.js"></script>
-		<script src="js/snackbar.min.js"></script>
-		<script src="js/jquery.nouislider.min.js"></script>
-		<script src="js/jquery.cookie.js"></script>
-		<script src="js/main.js"></script>
 	</body>
 </html>
 
