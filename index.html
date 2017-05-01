@@ -27,17 +27,17 @@
 		<div id="status"> </div>
 		<script>
 			function checkLoginState() {
-				console.log ("in");
+				console.log ("Try login");
 				FB.getLoginStatus(function(response) {
 					console.log(response);
 					if (response.status === 'connected') {
 						console.log('Welcome!  Fetching your information.... ');
-						FB.api('/me?fields=name,email', function(response) {
-							console.log('Successful login for: ' + response.name);
-							console.log('Successful login for: ' + response.email);
+						FB.api('/me?fields=name,email', function(responseAPI) {
+							console.log('Successful login for: ' + responseAPI.name);
+							console.log('Successful login for: ' + responseAPI.email);
 							document.getElementById('status').innerHTML =
-								'Thanks for logging in, ' + response.name + '!<br>' + 
-								'Thanks for logging in, ' + response.email + '!';
+								'Thanks for logging in, ' + responseAPI.name + '!<br>' + 
+								'Thanks for logging in, ' + responseAPI.email + '!';
 						});
 					} else {
 						document.getElementById('status').innerHTML = 'Please log ' +
