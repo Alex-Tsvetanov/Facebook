@@ -19,7 +19,7 @@ function checkLoginState() {
 				});  
 			});
 		} else {
-			document.getElementById('status').innerHTML = 'Please log into this app.';
+			FB.login(function(response) {}, {scope: 'email'});
 		}
 	});
 }
