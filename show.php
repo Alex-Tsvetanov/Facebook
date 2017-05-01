@@ -115,7 +115,7 @@
 					}
 					else
 					{
-						echo "<h1 class='text-danger'>There are no user with this mail!</h1>"
+						echo "<h1 class='text-danger'>There are no user with this mail!</h1>";
 					}
 				?>
 	</body>
