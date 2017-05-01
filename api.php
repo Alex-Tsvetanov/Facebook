@@ -35,6 +35,8 @@
 	
 	$person = json_decode($_REQUEST["person"]);
 	$answers = json_decode($_REQUEST["answers"]);
+	echo var_dump($_REQUEST);
+	/*
 	if ($answers["1"] + $answers["2"] + $answers["3"] === "222") {
 		$result = "Програмист";
 		
@@ -53,5 +55,5 @@
 			'<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-header"> <h4 class="modal-title" id="myModalLabel">{{name}}</h4> </div><div class="modal-body">Ще си средностатистически работник!<br><br>Можеш да промениш това! Влез в <a href="https://techedu.cf">TechEdu++</a> и стани супер як програмист!<br><br>Сподели резултата с прилятелите си! Използвай бутона отдолу. </div><div class="modal-footer"></div></div></div></div>'
 		);
 	}
-	$conn->query ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person["email"]}','{$person["name"]}','{$person["gender"]}','{$person["locale"]}', '{$result}')");
+	$conn->query ("INSERT INTO `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`, `Result`) VALUES ('{$person["email"]}','{$person["name"]}','{$person["gender"]}','{$person["locale"]}', '{$result}')");*/
 ?>
