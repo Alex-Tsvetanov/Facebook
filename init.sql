@@ -3,5 +3,6 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-DROP TABLE `JobsQuiz` IF EXISTS;
-CREATE TABLE `JobsQuiz` (`Email`, `Name`, `Gender`, `Locale`);
+USE `Facebook`;
+DROP TABLE IF EXISTS `JobsQuiz`;
+CREATE TABLE `JobsQuiz` (`Email` TEXT, `Name` TEXT, `Gender` TEXT, `Locale` TEXT);
