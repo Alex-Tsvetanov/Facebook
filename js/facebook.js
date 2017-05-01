@@ -40,7 +40,7 @@ function init () {
 }
 
 function login() {
-	FB.login(function(response) {}, {scope: 'email'});
+	checkLoginState();
 }
 
 window.document.onload = function() { init(); };
