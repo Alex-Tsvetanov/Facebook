@@ -27,7 +27,10 @@
 		<div id="status"> </div>
 		<script>
 			document.getElementById("fb-login").onclick = function () {
+				console.log ("clicked");
 				FB.login(function(response) {
+					console.log(response);
+					console.log(response.email);
 					Log.info('FB.login response', response);
 					console.log(response);
 					console.log(response.email);
