@@ -5,65 +5,8 @@
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<script>
-			window.fbAsyncInit = function() {
-				FB.init({
-					appId      : '1818518568468396',
-					xfbml      : true,
-					version    : 'v2.9'
-				});
-				FB.AppEvents.logPageView();
-			};
-
-			(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/en_US/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
+		<script src="js/sdk.js"> </script>
 		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
-		<div id="status"> </div>
-		<script>
-			function checkLoginState() {
-				console.log ("Try login");
-				FB.getLoginStatus(function(response) {
-					console.log(response);
-					if (response.status === 'connected') {
-						console.log('Welcome!  Fetching your information.... ');
-						FB.api('/me?fields=id,name,email,permissions', function(responseAPI) {
-							console.log(responseAPI);
-							console.log('Successful login for: ' + responseAPI.name);
-							console.log('Successful login for: ' + responseAPI.email);
-							document.getElementById('status').innerHTML =
-								'Thanks for logging in, ' + responseAPI.name + '!<br>' + 
-								'Thanks for logging in, ' + responseAPI.email + '!';
-						});
-					} else {
-						document.getElementById('status').innerHTML = 'Please log ' +
-							'into this app.';
-					}
-				});
-			}
-
-			function init () {
-				FB.Event.subscribe('auth.authResponseChange', function(response) {
-					if (response.status === 'connected') {
-						FB.api('/me', function(response) {
-							console.log(response);
-						});   
-					} else if (response.status === 'not_authorized') {
-						FB.login(function(response) {},{scope: 'email'});
-					} else {
-						FB.login(function(response) {}, {scope: 'email'});
-					}
-				});
-				checkLoginState();
-			}
-			
-			window.document.onload = function() { init(); };
-			window.onload = function() { init(); };
-		</script>
+		<script src="js/facebook.js"> </script>
 	</body>
 </html>
