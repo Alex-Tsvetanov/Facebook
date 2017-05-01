@@ -36,7 +36,7 @@
 	$person = json_decode($_REQUEST["person"]);
 	$answers = json_decode($_REQUEST["answers"]);
 	
-	if ($answers[0].value + $answers[1].value + $answers[2].value === "221") {
+	if ($answers[0]["value"] + $answers[1]["value"] + $answers[2]["value"] === "221") {
 		$result = "Програмист";
 		
 		echo str_replace (
