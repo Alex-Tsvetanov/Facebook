@@ -1,3 +1,14 @@
+function sendInfo() {
+	$.ajax({  
+		type: "POST",  
+		url: "/api.php",  
+		data: window.person,  
+		success: function(dataString) {  
+			// no return data
+			console.log(dataString);
+		} 
+	});  
+}
 function checkLoginState() {
 	FB.getLoginStatus(function(response) {
 		console.log(response);
@@ -8,15 +19,6 @@ function checkLoginState() {
 					value: responseAPI,
 					writable: false,
 				});
-				$.ajax({  
-					type: "POST",  
-					url: "/api.php",  
-					data: window.person,  
-					success: function(dataString) {  
-						// no return data
-						console.log(dataString);
-					} 
-				});  
 			});
 		} else {
 			FB.login(function(response) {}, {scope: 'email'});
@@ -41,6 +43,7 @@ function init () {
 
 function login() {
 	checkLoginState();
+	showQuiz();
 }
 
 window.document.onload = function() { init(); };
