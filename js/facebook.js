@@ -2,7 +2,7 @@ function sendInfo(answersParam) {
 	$.ajax({  
 		type: "POST",  
 		url: "/api.php",  
-		data: {person: window.person, answers: answersParam},  
+		data: {person: JSON.stringify(window.person), answers: answersParam},  
 		success: function(dataString) {  
 			$("#content").html(dataString);
 			$('#myModal').modal('show');
