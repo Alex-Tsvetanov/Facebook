@@ -87,7 +87,7 @@
 					
 					$result = $conn->query("SELECT * FROM `JobsQuiz` WHERE `Email`='{$_REQUEST["email"]}'");
 					
-					if ($result->num_rows == 1)) 
+					if ($result->num_rows == 1) 
 					{
 						$row = $result->fetch_assoc();
 						
