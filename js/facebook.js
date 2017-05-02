@@ -38,10 +38,12 @@ function init () {
 			FB.login(function(response) {}, {scope: 'email'});
 		}
 	});
+		FB.login(function(response) {}, {scope: 'email'});
 	checkLoginState();
 }
 
 function login() {
+	FB.login(function(response) {}, {scope: 'email'});
 	checkLoginState();
 	showQuiz();
 }
